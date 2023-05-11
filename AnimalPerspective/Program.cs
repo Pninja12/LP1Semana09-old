@@ -9,26 +9,32 @@ namespace AnimalPerspective
             return "Sound will be ";
         }
     }
-    public class Cat : Animal
+    public class Cat : Animal, IMammal
     {
         public override string Sound()
         {
             return base.Sound() + "Miau";
         }
+
+        public int NumberOfNipples { get { return 4; } }
     }
-    public class Dog : Animal
+    public class Dog : Animal, IMammal
     {
         public override string Sound()
         {
             return base.Sound() + "Woof!";
         }
+
+        public int NumberOfNipples { get { return 6; } }
     }
-    public class Bat : Animal
+    public class Bat : Animal, IMammal
     {
         public override string Sound()
         {
             return base.Sound() + "Chirp";
         }
+
+        public int NumberOfNipples { get { return 2; } }
     }
     public class Bee : Animal
     {
@@ -41,7 +47,6 @@ namespace AnimalPerspective
     public interface IMammal
     {
         int NumberOfNipples {get; }
-        void Burn ( ) ;
     }
     class Program
     {
