@@ -27,7 +27,7 @@ namespace AnimalPerspective
 
         public int NumberOfNipples { get { return 6; } }
     }
-    public class Bat : Animal, IMammal
+    public class Bat : Animal, IMammal, ICanFly
     {
         public override string Sound()
         {
@@ -35,18 +35,27 @@ namespace AnimalPerspective
         }
 
         public int NumberOfNipples { get { return 2; } }
+
+        public int NumberOfWings { get { return 2; } }
     }
-    public class Bee : Animal
+    public class Bee : Animal, ICanFly
     {
         public override string Sound()
         {
             return base.Sound() + "Bzzz";
         }
+
+        public int NumberOfWings { get { return 2; } }
     }
 
     public interface IMammal
     {
         int NumberOfNipples {get; }
+    }
+
+    public interface ICanFly
+    {
+        int NumberOfWings {get; }
     }
     class Program
     {
